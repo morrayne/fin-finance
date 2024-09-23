@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/default.css" />
+    <link rel="stylesheet" href="./css/optional.css" />
+    <title>Main page</title>
+  </head>
+  <body>
+    <div class="b">
+      <div class="container" id="swiper">
+        <section id="toprow">
+          <div class="toprow-left">
+            <div class="toprow-icon-holder">
+              <div id="toprow-icon-holder-inner">
+                <img
+                  src="./res/icons/sam_transparent.svg"
+                  class="svg toprow-icon"
+                />
+              </div>
+            </div>
+            <div class="fc jcsb">
+              <span id="user-name"> Name </span>
+              <span id="reg-date"> Since: 19.09.2024 </span>
+            </div>
+          </div>
+          <div class="toprow-right fc">
+            <div class="streak-holder">
+              <img src="./res/svg/streak.svg" class="streak" />
+            </div>
+            <span id="streak-number"> 88 </span>
+          </div>
+        </section>
+
+        <section id="balance">
+          <div id="balance-cover">
+            <img src="./res/svg/chip.svg" id="card-icon" />
+            <span class="f24"> Total Balance: </span>
+            <span class="f20"> 40 000 000 Р </span>
+            <div id="balance-bar-holder">
+              <div id="balance-bar"></div>
+              <div id="balance-bar"></div>
+            </div>
+            <div id="balance-bot">
+              <div class="balance-half">
+                <span> Total earnings: </span>
+                <span> 40 000 000 Р </span>
+              </div>
+              <div class="balance-half">
+                <span> Total expences: </span>
+                <span> 40 000 000 Р </span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="statistics">
+          <span style="width: 100%"> Recent months </span>
+          <form id="shortlist-filter-holder">
+            <input
+              type="radio"
+              name="sort-prio"
+              class="wishlist-prio-btn"
+              id="dia-sort-0"
+              checked
+            />
+            <label for="dia-sort-0"> None </label>
+            <input
+              type="radio"
+              name="sort-prio"
+              class="wishlist-prio-btn"
+              id="dai-sort-1"
+            />
+            <label for="dai-sort-1"> Home </label>
+            <input
+              type="radio"
+              name="sort-prio"
+              class="wishlist-prio-btn"
+              id="dia-sort-2"
+            />
+            <label for="dia-sort-2"> Food </label>
+            <input
+              type="radio"
+              name="sort-prio"
+              class="wishlist-prio-btn"
+              id="dia-sort-3"
+            />
+            <label for="dia-sort-3"> Health </label>
+            <input
+              type="radio"
+              name="sort-prio"
+              class="wishlist-prio-btn"
+              id="dia-sort-4"
+            />
+            <label for="dia-sort-4"> Clothes </label>
+            <input
+              type="radio"
+              name="sort-prio"
+              class="wishlist-prio-btn"
+              id="dia-sort-5"
+            />
+            <label for="dia-sort-5"> Hobby </label>
+            <input
+              type="radio"
+              name="sort-prio"
+              class="wishlist-prio-btn"
+              id="dia-sort-6"
+            />
+            <label for="dia-sort-6"> No category </label>
+          </form>
+          <div id="stat-holder">
+            <div id="stat-1">
+              <div class="stat-1-holder">
+                <span class="stat-month"> jul </span>
+                <div class="stat-column-1"></div>
+                <div class="stat-column-2"></div>
+              </div>
+              <div class="stat-1-holder">
+                <span class="stat-month"> aug </span>
+                <div
+                  class="stat-column-1"
+                  style="height: 50%; background: #ff0000"
+                ></div>
+                <div class="stat-column-2"></div>
+              </div>
+              <div class="stat-1-holder">
+                <span class="stat-month"> sep </span>
+                <div class="stat-column-1"></div>
+                <div class="stat-column-2"></div>
+              </div>
+            </div>
+            <div id="stat-2">
+              <div class="dia-holder">
+                <div id="void"></div>
+                <div class="dia"></div>
+                <div class="dia"></div>
+                <div class="dia"></div>
+                <div class="dia"></div>
+                <div class="dia"></div>
+                <div class="dia"></div>
+              </div>
+            </div>
+          </div>
+          <span style="width: 100%"> Set monthly limit: </span>
+          <input type="number" id="set-limit" />
+          <button id="clear-limit">Apply</button>
+        </section>
+
+        <section id="shortlist-filter">
+          <span> Last 7 days </span>
+          <form id="shortlist-filter-holder">
+            <input
+              type="radio"
+              name="sort-prio"
+              class="wishlist-prio-btn"
+              id="sort-short-history-0"
+              checked
+            />
+            <label for="sort-short-history-0"> None </label>
+            <input
+              type="radio"
+              name="sort-prio"
+              class="wishlist-prio-btn"
+              id="sort-short-history-1"
+            />
+            <label for="sort-short-history-1"> Home </label>
+            <input
+              type="radio"
+              name="sort-prio"
+              class="wishlist-prio-btn"
+              id="sort-short-history-2"
+            />
+            <label for="sort-short-history-2"> Food </label>
+            <input
+              type="radio"
+              name="sort-prio"
+              class="wishlist-prio-btn"
+              id="sort-short-history-3"
+            />
+            <label for="sort-short-history-3"> Health </label>
+            <input
+              type="radio"
+              name="sort-prio"
+              class="wishlist-prio-btn"
+              id="sort-short-history-4"
+            />
+            <label for="sort-short-history-4"> Clothes </label>
+            <input
+              type="radio"
+              name="sort-prio"
+              class="wishlist-prio-btn"
+              id="sort-short-history-5"
+            />
+            <label for="sort-short-history-5"> Hobby </label>
+            <input
+              type="radio"
+              name="sort-prio"
+              class="wishlist-prio-btn"
+              id="sort-short-history-6"
+            />
+            <label for="sort-short-history-6"> No category </label>
+          </form>
+        </section>
+        <section id="shortlist">
+          <button class="day">
+            <div class="day-top">
+              <span> 20 Sep 2024 </span>
+              <span> -40 000 Р </span>
+            </div>
+            <div class="day-bot" style="display: none">
+              <div class="day-bot-row">
+                <div class="day-bot-row-icon"></div>
+                <span class="day-bot-row-text"> Zxc name task </span>
+                <span class="day-bot-row-summ"> -20 000 Р </span>
+              </div>
+              <div class="day-bot-row">
+                <div class="day-bot-row-icon"></div>
+                <span class="day-bot-row-text"> Zxc name task </span>
+                <span class="day-bot-row-summ"> -10 000 Р </span>
+              </div>
+              <div class="day-bot-row">
+                <div class="day-bot-row-icon"></div>
+                <span class="day-bot-row-text"> Zxc name task </span>
+                <span class="day-bot-row-summ"> -10 000 Р </span>
+              </div>
+            </div>
+          </button>
+          <button class="day">
+            <div class="day-top">
+              <span> 23 Sep 2024 </span>
+              <span> -40 000 Р </span>
+            </div>
+            <div class="day-bot" style="display: none">
+              <div class="day-bot-row">
+                <div class="day-bot-row-icon"></div>
+                <span class="day-bot-row-text"> Zxc name task </span>
+                <span class="day-bot-row-summ"> -20 000 Р </span>
+              </div>
+              <div class="day-bot-row">
+                <div class="day-bot-row-icon"></div>
+                <span class="day-bot-row-text"> Zxc name task </span>
+                <span class="day-bot-row-summ"> -10 000 Р </span>
+              </div>
+              <div class="day-bot-row">
+                <div class="day-bot-row-icon"></div>
+                <span class="day-bot-row-text"> Zxc name task </span>
+                <span class="day-bot-row-summ"> -10 000 Р </span>
+              </div>
+            </div>
+          </button>
+          <button class="day">
+            <div class="day-top">
+              <span> 23 Sep 2024 </span>
+              <span> -40 000 Р </span>
+            </div>
+            <div class="day-bot" style="display: none">
+              <div class="day-bot-row">
+                <div class="day-bot-row-icon"></div>
+                <span class="day-bot-row-text"> Zxc name task </span>
+                <span class="day-bot-row-summ"> -20 000 Р </span>
+              </div>
+              <div class="day-bot-row">
+                <div class="day-bot-row-icon"></div>
+                <span class="day-bot-row-text"> Zxc name task </span>
+                <span class="day-bot-row-summ"> -10 000 Р </span>
+              </div>
+              <div class="day-bot-row">
+                <div class="day-bot-row-icon"></div>
+                <span class="day-bot-row-text"> Zxc name task </span>
+                <span class="day-bot-row-summ"> -10 000 Р </span>
+              </div>
+            </div>
+          </button>
+        </section>
+      </div>
+
+      <div class="container">
+        <section id="wishlist">
+          <form id="wishlist-form">
+            <span> Here you can create new wish </span>
+            <input type="text" placeholder="Wish name" class="wishlist-input" />
+            <input
+              type="number"
+              placeholder="Expances"
+              class="wishlist-input"
+            />
+            <span> Choose how important it is </span>
+            <div id="wishlist-form-holder">
+              <input
+                type="radio"
+                name="wish-prio"
+                class="wishlist-prio-btn"
+                id="wish-radio-0"
+                checked
+              />
+              <label for="wish-radio-0"> For fun (0) </label>
+              <input
+                type="radio"
+                name="wish-prio"
+                class="wishlist-prio-btn"
+                id="wish-radio-1"
+              />
+              <label for="wish-radio-1"> No worry (1) </label>
+              <input
+                type="radio"
+                name="wish-prio"
+                class="wishlist-prio-btn"
+                id="wish-radio-2"
+              />
+              <label for="wish-radio-2"> Needed (2) </label>
+              <input
+                type="radio"
+                name="wish-prio"
+                class="wishlist-prio-btn"
+                id="wish-radio-3"
+              />
+              <label for="wish-radio-3"> Emergency (3) </label>
+            </div>
+            <div class="g12 jce">
+              <button type="submit" class="wish-submit">Clear</button>
+              <button type="submit" class="wish-submit">Submit</button>
+            </div>
+          </form>
+        </section>
+        <div id="wishlist-top">
+          <span> Filter your wishes </span>
+          <form id="wishlist-sort">
+            <input
+              type="radio"
+              name="sort-prio"
+              class="wishlist-prio-btn"
+              id="sort-radio-0"
+              checked
+            />
+            <label for="sort-radio-0"> None </label>
+            <input
+              type="radio"
+              name="sort-prio"
+              class="wishlist-prio-btn"
+              id="sort-radio-1"
+            />
+            <label for="sort-radio-1"> Priority </label>
+            <input
+              type="radio"
+              name="sort-prio"
+              class="wishlist-prio-btn"
+              id="sort-radio-2"
+            />
+            <label for="sort-radio-2"> Cost </label>
+            <input
+              type="radio"
+              name="sort-prio"
+              class="wishlist-prio-btn"
+              id="sort-radio-3"
+            />
+            <label for="sort-radio-3"> Date </label>
+          </form>
+        </div>
+        <div id="wishlist-holder">
+          <div class="wish">
+            <button class="wish-left">
+              <div class="g4 jcsb">
+                <span class="f16"> Name </span>
+                <span class="f16"> 40 000 Р </span>
+              </div>
+            </button>
+            <div class="wish-right">
+              <span class="wish-r-top"> 23.09.2024 </span>
+              <div class="wish-r-bot">
+                <button class="wish-complete">
+                  <img src="./res/svg/complete.svg" class="svg" />
+                </button>
+                <button class="wish-delete">
+                  <img src="./res/svg/delete.svg" class="svg" />
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="wish">
+            <button class="wish-left">
+              <div class="g4 jcsb">
+                <span class="f16"> Name </span>
+                <span class="f16"> 40 000 Р </span>
+              </div>
+            </button>
+            <div class="wish-right">
+              <span class="wish-r-top"> 23.09.2024 </span>
+              <div class="wish-r-bot">
+                <button class="wish-complete">
+                  <img src="./res/svg/complete.svg" class="svg" />
+                </button>
+                <button class="wish-delete">
+                  <img src="./res/svg/delete.svg" class="svg" />
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="wish">
+            <button class="wish-left">
+              <div class="g4 jcsb">
+                <span class="f16"> Name </span>
+                <span class="f16"> 40 000 Р </span>
+              </div>
+            </button>
+            <div class="wish-right">
+              <span class="wish-r-top"> 23.09.2024 </span>
+              <div class="wish-r-bot">
+                <button class="wish-complete">
+                  <img src="./res/svg/complete.svg" class="svg" />
+                </button>
+                <button class="wish-delete">
+                  <img src="./res/svg/delete.svg" class="svg" />
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="wish">
+            <button class="wish-left">
+              <div class="g4 jcsb">
+                <span class="f16"> Name </span>
+                <span class="f16"> 40 000 Р </span>
+              </div>
+            </button>
+            <div class="wish-right">
+              <span class="wish-r-top"> 23.09.2024 </span>
+              <div class="wish-r-bot">
+                <button class="wish-complete">
+                  <img src="./res/svg/complete.svg" class="svg" />
+                </button>
+                <button class="wish-delete">
+                  <img src="./res/svg/delete.svg" class="svg" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <section id="create-record">
+          <form class="wh fc g8">
+            <input type="text" placeholder="Name" class="record-input" />
+            <input type="number" placeholder="Cost" class="record-input" />
+            <div id="record-input-holder">
+              <input
+                type="radio"
+                name="sort-prio"
+                class="wishlist-prio-btn"
+                id="pick-cl-0"
+              />
+              <label for="pick-cl-0">
+                <span class="f12"> Home </span>
+              </label>
+              <input
+                type="radio"
+                name="sort-prio"
+                class="wishlist-prio-btn"
+                id="pick-cl-1"
+              />
+              <label for="pick-cl-1">
+                <span class="f12"> Food </span>
+              </label>
+              <input
+                type="radio"
+                name="sort-prio"
+                class="wishlist-prio-btn"
+                id="pick-cl-2"
+              />
+              <label for="pick-cl-2">
+                <span class="f12"> Health </span>
+              </label>
+              <input
+                type="radio"
+                name="sort-prio"
+                class="wishlist-prio-btn"
+                id="pick-cl-3"
+              />
+              <label for="pick-cl-3">
+                <span class="f12"> Clothes </span>
+              </label>
+              <input
+                type="radio"
+                name="sort-prio"
+                class="wishlist-prio-btn"
+                id="pick-cl-4"
+              />
+              <label for="pick-cl-4">
+                <span class="f12"> Hobby </span>
+              </label>
+              <input
+                type="radio"
+                name="sort-prio"
+                class="wishlist-prio-btn"
+                id="pick-cl-5"
+                checked
+              />
+              <label for="pick-cl-5">
+                <span class="f12"> No category </span>
+              </label>
+            </div>
+            <div class="g12 jce">
+              <button type="submit" class="wish-submit">Clear</button>
+              <button type="submit" class="wish-submit">Submit</button>
+            </div>
+          </form>
+        </section>
+        <section id="full-list">
+          <button class="day">
+            <div class="day-top">
+              <span> 20 Sep 2024 </span>
+              <span> -40 000 Р </span>
+            </div>
+            <div class="day-bot" style="display: none">
+              <div class="day-bot-row">
+                <div class="day-bot-row-icon"></div>
+                <span class="day-bot-row-text"> Zxc name task </span>
+                <span class="day-bot-row-summ"> -20 000 Р </span>
+              </div>
+              <div class="day-bot-row">
+                <div class="day-bot-row-icon"></div>
+                <span class="day-bot-row-text"> Zxc name task </span>
+                <span class="day-bot-row-summ"> -10 000 Р </span>
+              </div>
+              <div class="day-bot-row">
+                <div class="day-bot-row-icon"></div>
+                <span class="day-bot-row-text"> Zxc name task </span>
+                <span class="day-bot-row-summ"> -10 000 Р </span>
+              </div>
+            </div>
+          </button>
+          <button class="day">
+            <div class="day-top">
+              <span> 23 Sep 2024 </span>
+              <span> -40 000 Р </span>
+            </div>
+            <div class="day-bot" style="display: none">
+              <div class="day-bot-row">
+                <div class="day-bot-row-icon"></div>
+                <span class="day-bot-row-text"> Zxc name task </span>
+                <span class="day-bot-row-summ"> -20 000 Р </span>
+              </div>
+              <div class="day-bot-row">
+                <div class="day-bot-row-icon"></div>
+                <span class="day-bot-row-text"> Zxc name task </span>
+                <span class="day-bot-row-summ"> -10 000 Р </span>
+              </div>
+              <div class="day-bot-row">
+                <div class="day-bot-row-icon"></div>
+                <span class="day-bot-row-text"> Zxc name task </span>
+                <span class="day-bot-row-summ"> -10 000 Р </span>
+              </div>
+            </div>
+          </button>
+          <button class="day">
+            <div class="day-top">
+              <span> 23 Sep 2024 </span>
+              <span> -40 000 Р </span>
+            </div>
+            <div class="day-bot" style="display: none">
+              <div class="day-bot-row">
+                <div class="day-bot-row-icon"></div>
+                <span class="day-bot-row-text"> Zxc name task </span>
+                <span class="day-bot-row-summ"> -20 000 Р </span>
+              </div>
+              <div class="day-bot-row">
+                <div class="day-bot-row-icon"></div>
+                <span class="day-bot-row-text"> Zxc name task </span>
+                <span class="day-bot-row-summ"> -10 000 Р </span>
+              </div>
+              <div class="day-bot-row">
+                <div class="day-bot-row-icon"></div>
+                <span class="day-bot-row-text"> Zxc name task </span>
+                <span class="day-bot-row-summ"> -10 000 Р </span>
+              </div>
+            </div>
+          </button>
+          <span>
+            Я сделаю фильтры на те же кнопки на которые происходит создание
+            записи: (если ни одно из полей не заполнено, то кнопки будут
+            выступать в качестве фильтров, иначе в качестве класса для создания)
+          </span>
+        </section>
+      </div>
+
+      <div class="container">
+        <section id="theme">
+          <span style="margin-right: auto"> Change theme </span>
+          <div class="theme-btn-row">
+            <div class="theme-bar-holder">
+              <div class="theme-bar" style="width: 49px"></div>
+            </div>
+            <button class="theme-btn-holder">
+              <div class="theme-btn">Dark</div>
+            </button>
+            <button class="theme-btn-holder">
+              <div class="theme-btn">Light</div>
+            </button>
+            <button class="theme-btn-holder">
+              <div class="theme-btn">Crimson</div>
+            </button>
+            <button class="theme-btn-holder">
+              <div class="theme-btn">Random</div>
+            </button>
+          </div>
+        </section>
+        <section id="gender">
+          <span> Who are you </span>
+          <div class="theme-btn-row">
+            <div class="theme-bar-holder">
+              <div class="theme-bar" style="width: 67px"></div>
+            </div>
+            <button class="theme-btn-holder">
+              <div class="theme-btn">No info</div>
+            </button>
+            <button class="theme-btn-holder">
+              <div class="theme-btn">Male</div>
+            </button>
+            <button class="theme-btn-holder">
+              <div class="theme-btn">Female</div>
+            </button>
+          </div>
+        </section>
+        <section id="language">
+          <span> Change language </span>
+          <div class="theme-btn-row">
+            <div class="theme-bar-holder">
+              <div class="theme-bar" style="width: 68px"></div>
+            </div>
+            <button class="theme-btn-holder">
+              <div class="theme-btn">English</div>
+            </button>
+            <button class="theme-btn-holder">
+              <div class="theme-btn">Russian</div>
+            </button>
+          </div>
+        </section>
+        <section id="creator">
+          <span> About creator: </span>
+          <span>
+            Секция #statistics, по планам там при любом выбранном фильтре кроме
+            none будет включаться второй график, а он будет только для текущего
+            месяца
+          </span>
+        </section>
+      </div>
+
+      <footer class="csb">
+        <div id="footer-holder">
+          <div id="footer-bar-holder">
+            <div id="footer-bar"></div>
+          </div>
+          <button class="footer-btn">
+            <img src="./res/svg/stats.svg" class="svg footer-svg" />
+            <span class="footer-text"> Home </span>
+          </button>
+          <button class="footer-btn">
+            <img src="./res/svg/wishlist.svg" class="svg footer-svg" />
+            <span class="footer-text"> Wishlist </span>
+          </button>
+          <button class="footer-btn">
+            <img src="./res/svg/list.svg" class="svg footer-svg" />
+            <span class="footer-text"> History </span>
+          </button>
+          <button class="footer-btn">
+            <img src="./res/svg/options.svg" class="svg footer-svg" />
+            <span class="footer-text"> Options </span>
+          </button>
+        </div>
+      </footer>
+    </div>
+  </body>
+  <script src="./js/script.js"></script>
+  <script src="./js/options.js"></script>
+  <script src="./js/navigation.js"></script>
+</html>
