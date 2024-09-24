@@ -342,7 +342,7 @@ footer {
   background: linear-gradient(-45deg, #3465bb, #34bb9e);
   border-radius: 0px 8px 8px 0px;
   z-index: 4;
-  border: solid 4px #0d1117;
+  border: solid 4px #010409;
   padding: 6px 6px 6px 24px;
   justify-content: space-between;
 }
@@ -381,7 +381,7 @@ footer {
 
 #wishlist-form {
   width: 100%;
-  background: #0d1117;
+  /* background: #0d1117; */
   display: flex;
   /* padding: 12px; */
   border-radius: 12px;
@@ -395,6 +395,9 @@ footer {
   border-radius: 8px;
   background: #010409;
   color: #fff;
+}
+input::placeholder {
+  color: #ffffff80;
 }
 #wishlist-form-holder {
   width: 100%;
@@ -410,22 +413,27 @@ footer {
 }
 .wishlist-prio-btn {
   display: none;
+  box-sizing: border-box;
 }
 label {
   width: fit-content;
+  max-height: 40px;
   height: 40px;
   display: flex;
   align-items: center;
   padding: 0px 12px;
   background-color: #010409;
-  border: solid 1px #010409;
   border-radius: 20px;
   cursor: pointer;
   position: relative;
   font-size: 12px;
   white-space: nowrap;
+  box-sizing: border-box;
+  transition: 0.4s;
 }
 .wishlist-prio-btn:checked + label {
+  padding: 0px 20px;
+  box-sizing: border-box;
   border: solid 1px #0da32b;
   color: white;
 }
@@ -542,6 +550,8 @@ label {
 #full-list {
   flex-direction: column;
   gap: 12px;
+  background: none;
+  padding: 0;
 }
 
 /* THEME */
@@ -569,6 +579,7 @@ label {
   width: 100%;
   height: 100%;
   position: absolute;
+  border-radius: 4px;
   padding: 4px;
   left: 0;
   top: 0;

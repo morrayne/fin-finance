@@ -17,7 +17,7 @@
             <div class="toprow-icon-holder">
               <div id="toprow-icon-holder-inner">
                 <img
-                  src="./res/icons/sam_transparent.svg"
+                  src="./res/icons/m7.svg"
                   class="svg toprow-icon"
                 />
               </div>
@@ -145,7 +145,7 @@
             </div>
           </div>
           <span style="width: 100%"> Set monthly limit: </span>
-          <input type="number" id="set-limit" />
+          <input type="number" placeholder="30 000 Р" id="set-limit" />
           <button id="clear-limit">Apply</button>
         </section>
 
@@ -577,11 +577,6 @@
               </div>
             </div>
           </button>
-          <span>
-            Я сделаю фильтры на те же кнопки на которые происходит создание
-            записи: (если ни одно из полей не заполнено, то кнопки будут
-            выступать в качестве фильтров, иначе в качестве класса для создания)
-          </span>
         </section>
       </div>
 
@@ -599,7 +594,7 @@
               <div class="theme-btn">Light</div>
             </button>
             <button class="theme-btn-holder">
-              <div class="theme-btn">Crimson</div>
+              <div class="theme-btn">Mint</div>
             </button>
             <button class="theme-btn-holder">
               <div class="theme-btn">Random</div>
@@ -639,11 +634,6 @@
         </section>
         <section id="creator">
           <span> About creator: </span>
-          <span>
-            Секция #statistics, по планам там при любом выбранном фильтре кроме
-            none будет включаться второй график, а он будет только для текущего
-            месяца
-          </span>
         </section>
       </div>
 
@@ -672,7 +662,9 @@
       </footer>
     </div>
   </body>
+  <script src="./js/toprow.js"></script>
   <script src="./js/script.js"></script>
   <script src="./js/options.js"></script>
+  <script src="./js/theme.js"></script>
   <script src="./js/navigation.js"></script>
 </html>

@@ -21,7 +21,7 @@ let startX;
 document.addEventListener("touchstart", function(event) {
     startX = event.touches[0].clientX;
 })
-const banIdArray = ["stat-1", "stats-1-holder", "stat-2", "dia", "void", "dia-holder", "wishlist-form-holder", "f12"];
+const banIdArray = ["stat-1", "stats-1-holder", "stat-column-1", "stat-column-2", "stat-2", "dia", "void", "dia-holder", "wishlist-form-holder", "f12"];
 let page = 0;
 
 document.addEventListener("touchend", function(event) {

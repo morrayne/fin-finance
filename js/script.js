@@ -29,7 +29,13 @@ document.addEventListener("click", function(event) {
     }
 })
 
+// КНОПКИ НАСТРОЕК
 
+
+
+
+
+// ЗАГОТОВКА ДЛЯ ДИАГРАММЫ
 
 let colorArray = ["#527f99", "#15d44f", "#c43232", "#c4327b", "#563d7c", "#f1e05a"];
 document.querySelectorAll(".dia").forEach(function(el, index) {
