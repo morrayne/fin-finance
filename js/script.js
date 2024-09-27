@@ -1,3 +1,15 @@
+// ЗАГОТОВКА ДЛЯ ДИАГРАММЫ
+
+let colorArray = ["#527f99", "#15d44f", "#c43232", "#c4327b", "#563d7c", "#f1e05a"];
+document.querySelectorAll(".dia").forEach(function(el, index) {
+    if (index < colorArray.length) {
+        el.style.background = "conic-gradient(" + colorArray[index] + " 0% " + (index + 1) * 10 + "%, rgba(1, 4, 9, 0) " + (index + 1) * 10 + "% 100%)";
+        el.style.zIndex = 10 - index;
+    }
+})
+
+// РАСКРЫТИЕ ДНЯ И ЖЕЛАНИЙ
+
 document.addEventListener("click", function(event) {
     let targetDay = event.target.closest(".day");
     if (targetDay) {
@@ -19,18 +31,9 @@ document.addEventListener("click", function(event) {
 })
 
  
+ 
 
 
 
 
-
-// ЗАГОТОВКА ДЛЯ ДИАГРАММЫ
-
-let colorArray = ["#527f99", "#15d44f", "#c43232", "#c4327b", "#563d7c", "#f1e05a"];
-document.querySelectorAll(".dia").forEach(function(el, index) {
-    if (index < colorArray.length) {
-        el.style.background = "conic-gradient(" + colorArray[index] + " 0% " + (index + 1) * 10 + "%, rgba(1, 4, 9, 0) " + (index + 1) * 10 + "% 100%)";
-        el.style.zIndex = 10 - index;
-    }
-})
 

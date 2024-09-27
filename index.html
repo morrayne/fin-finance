@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/default.css" />
-    <link rel="stylesheet" href="./css/fin.css" />
     <title>Main page</title>
   </head>
   <body>
@@ -561,41 +560,58 @@
 
       <div class="container">
         <section>
-          <span>
-            Choose theme
-          </span>
+          <span> Choose theme: </span>
           <form class="opt">
-            <input name="themes" class="opt-btn" type="radio" id="theme-0">
+            <div class="opt-runner"></div>
+            <input name="themes" class="opt-btn" type="radio" id="theme-0" />
             <label for="theme-0" class="opt-label"> Dark </label>
-            <input name="themes" class="opt-btn" type="radio" id="theme-1">
+            <input name="themes" class="opt-btn" type="radio" id="theme-1" />
             <label for="theme-1" class="opt-label"> Light </label>
-            <input name="themes" class="opt-btn" type="radio" id="theme-2">
+            <input name="themes" class="opt-btn" type="radio" id="theme-2" />
             <label for="theme-2" class="opt-label"> Red dead </label>
-            <input name="themes" class="opt-btn" type="radio" id="theme-3">
+            <input name="themes" class="opt-btn" type="radio" id="theme-3" />
             <label for="theme-3" class="opt-label"> Random </label>
           </form>
         </section>
         <section>
-          <span>
-            Pick gender
-          </span>
+          <span> Pick gender: </span>
           <form class="opt">
-            <input name="genders" class="opt-btn" type="radio" id="theme-0">
+            <div class="opt-runner"></div>
+            <input name="genders" class="opt-btn" type="radio" id="theme-0" />
             <label for="theme-0" class="opt-label"> No info </label>
-            <input name="genders" class="opt-btn" type="radio" id="theme-1">
+            <input name="genders" class="opt-btn" type="radio" id="theme-1" />
             <label for="theme-1" class="opt-label"> Male </label>
-            <input name="genders" class="opt-btn" type="radio" id="theme-2">
+            <input name="genders" class="opt-btn" type="radio" id="theme-2" />
             <label for="theme-2" class="opt-label"> Female </label>
           </form>
         </section>
         <section>
-          <span>
-            About creator
+          <span> Change language: </span>
+          <form class="opt">
+            <div class="opt-runner"></div>
+            <input name="lang" class="opt-btn" type="radio" id="lang-0" />
+            <label for="lang-0" class="opt-label"> English </label>
+            <input name="lang" class="opt-btn" type="radio" id="lang-1" />
+            <label for="lang-1" class="opt-label"> Russian </label>
+          </form>
+        </section>
+        <section>
+          <span> About creation: </span>
+          <span class="f12">
+            Started 02.09.24<br> Finished 24.10.24
+            <!-- <br />Special thanks to my uncle for putting up with me -->
           </span>
+          <div id="creator-row">
+            <a href="https://github.com/morrayne" class="link">
+              <span style="white-space: nowrap"> Visit my github: </span>
+              <img src="./res/img/j.png" id="creator-icon" />
+            </a>
+          </div>
         </section>
       </div>
     </div>
   </body>
   <script src="./js/script.js"></script>
   <script src="./js/navigation.js"></script>
+  <script src="./js/options.js"></script>
 </html>

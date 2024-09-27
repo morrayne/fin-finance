@@ -19,7 +19,7 @@ document.querySelectorAll(".footer-btn").forEach(function (el, index) {
     footerSwitcher(index);
   })
 })
-
+ 
 let page = 0;
 function footerSwitcher(index) {
   if (index === 0) {
