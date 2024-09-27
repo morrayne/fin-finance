@@ -11,12 +11,12 @@
   format("truetype");
 }
 body {
-  --main: #010309;
-  --extra: #0d1117;
-  --third: #010309;
-  --text: #ffffff;
-  --outline: #ffffff60;
-  --placeholder-color: #ffffff60;
+  --main: #000;
+  --extra: #000;
+  --third: #000;
+  --text: #000;
+  --outline: #000;
+  --placeholder-color: #000;
 }
 * {
   transition: 0.4s;

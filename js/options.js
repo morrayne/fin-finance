@@ -1,104 +1,4 @@
-let widths = [[], [], []];
-document.querySelectorAll(".opt").forEach(function (el, index) {
-  for (var i = 2; i < el.children.length; i += 2) {
-    widths[index].push(el.children[i].clientWidth);
-  }
-});
-document.addEventListener("click", function (event) {
-  if (event.target.tagName === "LABEL") {
-    const formIndex = Array.from(
-      event.target.parentElement.parentElement.parentElement.querySelectorAll(
-        event.target.parentElement.tagName
-      )
-    ).indexOf(event.target.parentElement);
-    const labelIndex = Array.from(
-      event.target.parentElement.querySelectorAll("label")
-    ).indexOf(event.target);
-    moveToChecked(formIndex, labelIndex);
-    if (formIndex === 0) {
-      if (labelIndex === 0) {
-        changeTheme(
-          "#010309",
-          "#0d1117",
-          "#010309",
-          "#ffffff",
-          "#ffffff",
-          "#ffffff60"
-        );
-        document.querySelectorAll(".svg").forEach(function (el) {
-          el.style.filter = "";
-        });
-      } else if (labelIndex === 1) {
-        changeTheme(
-          "#ffffff",
-          "#e5e5e5",
-          "#ffffff",
-          "#000000",
-          "#000000",
-          "#00000060"
-        );
-        document.querySelectorAll(".svg").forEach(function (el) {
-          el.style.filter = "invert(0)";
-        });
-      } else if (labelIndex === 2) {
-        changeTheme(
-          "#010309",
-          "#871e1b",
-          "#dd9c18",
-          "#000000",
-          "#000000",
-          "#00000090"
-        );
-        document.querySelectorAll(".svg").forEach(function (el) {
-          el.style.filter = "invert(0)";
-        });
-      } else {
-        const random = getRandomColors();
-        if (random[3] === 1) {
-          changeTheme(
-            random[0],
-            random[1],
-            random[2],
-            "#000000",
-            "#000000",
-            "#00000060"
-          );
-          document.querySelectorAll(".svg").forEach(function (el) {
-            el.style.filter = "";
-          });
-        } else {
-          changeTheme(
-            random[0],
-            random[1],
-            random[2],
-            "#ffffff",
-            "#ffffff",
-            "#ffffff60"
-          );
-          document.querySelectorAll(".svg").forEach(function (el) {
-            el.style.filter = "invert(1)";
-          });
-        }
-      }
-    }
-  }
-})
-function moveToChecked(formIndex, labelIndex) {
-  document.querySelectorAll(".opt").forEach(function (el, index) {
-    if (index === formIndex) {
-      el.children[0].style.width = widths[formIndex][labelIndex] + "px";
-      if (labelIndex === 0) {
-        el.children[0].style.transform = "";
-      } else {
-        let left = 0;
-        for (var i = 0; i < labelIndex; i++) {
-          left += widths[formIndex][i] + 12;
-        }
-        el.children[0].style.transform = "translate(" + left + "px)";
-      }
-    }
-  })
-}
+const optGap = 12;
 const darkColors = [
   "#2F4F4F", // Dark Slate Gray
   "#4B0082", // Indigo
@@ -121,7 +21,7 @@ const darkColors = [
   "#4B3D3D", // Charcoal Brown
   "#4F4F4F", // Charcoal Gray
   "#3B3B3B", // Onyx
-]
+];
 const lightColors = [
   "#F0E68C", // Khaki
   "#FFE4B5", // Moccasin
@@ -144,8 +44,52 @@ const lightColors = [
   "#FFE4E1", // Misty Rose
   "#D8BFD8", // Thistle
   "#FFFAF0", // Floral White
-]
+];
+let widths = [[], [], []];
+document.querySelectorAll(".opt").forEach(function (el, index) {
+  for (var i = 2; i < el.children.length; i += 2) {
+    widths[index].push(el.children[i].clientWidth);
+  }
+});
+document.addEventListener("click", function (event) {
+  if (event.target.classList.contains("opt-label")) {
+    const formIndex = Array.from(event.target.parentElement.parentElement.parentElement.querySelectorAll(event.target.parentElement.tagName)).indexOf(event.target.parentElement);
+    let labelIndex = Array.from(event.target.parentElement.querySelectorAll("label")).indexOf(event.target);
+    moveToChecked(formIndex, labelIndex);
+    if (formIndex === 0) {
+      themeSwitcher(labelIndex);
+      localStorage.setItem("theme", labelIndex);
+    }
+  }
+});
 
+if (localStorage.getItem("theme")) {
+  themeSwitcher(Number(localStorage.getItem("theme")));
+  moveToChecked(0, localStorage.getItem("theme"));
+} else {
+  moveToChecked(0, 0);
+} if (localStorage.getItem("gender")) {
+  pickGender();
+  moveToChecked(1, localStorage.getItem("gender"));
+} else {
+  moveToChecked(1, 0);
+} if (localStorage.getItem("lang")) {
+  languageSwap();
+  moveToChecked(2, localStorage.getItem("lang"));
+} else {
+  moveToChecked(2, 0);
+}
+
+// FUNCTIONS
+
+function changeTheme(a, b, c, d, e, f) {
+  document.body.style.setProperty("--main", a);
+  document.body.style.setProperty("--extra", b);
+  document.body.style.setProperty("--third", c);
+  document.body.style.setProperty("--text", d);
+  document.body.style.setProperty("--outline", e);
+  document.body.style.setProperty("--placeholder-color", f);
+}
 function getRandomColors() {
   var chosenValue = Math.random() < 0.5 ? 0 : 1;
   let selectedArray = [];
@@ -165,15 +109,89 @@ function getRandomColors() {
   selectedColors.push(chosenValue);
   return selectedColors;
 }
-
-function changeTheme(a, b, c, d, e, f) {
-  document.body.style.setProperty("--main", a);
-  document.body.style.setProperty("--extra", b);
-  document.body.style.setProperty("--third", c);
-  document.body.style.setProperty("--text", d);
-  document.body.style.setProperty("--outline", e);
-  document.body.style.setProperty("--placeholder-color", f);
+function moveToChecked(formIndex, labelIndex) {
+  const el = document.querySelectorAll(".opt").item(formIndex);
+  el.children[0].style.width = widths[formIndex][labelIndex] + "px";
+  if (labelIndex === 0) {
+    el.children[0].style.transform = "";
+  } else {
+    let left = 0;
+    for (var i = 0; i < labelIndex; i++) {
+      left += widths[formIndex][i];
+    }
+    left += labelIndex * optGap;
+    el.children[0].style.transform = "translate(" + left + "px)";
+  }
 }
-moveToChecked(0, 0);
-moveToChecked(1, 0);
-moveToChecked(2, 0);
+function themeSwitcher(labelIndex) {
+  if (labelIndex === 0) {
+    changeTheme(
+      "#010409",
+      "#0d1117",
+      "#010409",
+      "#ffffff",
+      "#ffffff20",
+      "#ffffff60"
+    );
+    document.querySelectorAll(".svg").forEach(function (el) {
+      el.style.filter = "";
+    });
+  } else if (labelIndex === 1) {
+    changeTheme(
+      "#ffffff",
+      "#e5e5e5",
+      "#ffffff",
+      "#000000",
+      "#000000",
+      "#00000060"
+    );
+    document.querySelectorAll(".svg").forEach(function (el) {
+      el.style.filter = "invert(0)";
+    });
+  } else if (labelIndex === 2) {
+    changeTheme(
+      "#871e1b",
+      "#010409",
+      "#dd9c18",
+      "#ffffff",
+      "#ffffff",
+      "#ffffff90"
+    );
+    document.querySelectorAll(".svg").forEach(function (el) {
+      el.style.filter = "invert(1)";
+    });
+  } else {
+    const random = getRandomColors();
+    if (random[3] === 1) {
+      changeTheme(
+        random[0],
+        random[1],
+        random[2],
+        "#000000",
+        "#000000",
+        "#00000060"
+      );
+      document.querySelectorAll(".svg").forEach(function (el) {
+        el.style.filter = "";
+      });
+    } else {
+      changeTheme(
+        random[0],
+        random[1],
+        random[2],
+        "#ffffff",
+        "#ffffff",
+        "#ffffff60"
+      );
+      document.querySelectorAll(".svg").forEach(function (el) {
+        el.style.filter = "invert(1)";
+      });
+    }
+  }
+}
+function pickGender() {
+
+}
+function languageSwap() {
+  
+}
