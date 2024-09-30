@@ -542,7 +542,7 @@ footer {
   gap: 8px;
   border-radius: 8px;
   background-color: var(--third);
-  display: flex;
+  display: flex; 
   align-items: center;
 }
 #creator-icon {
