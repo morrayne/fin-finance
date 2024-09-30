@@ -47,9 +47,7 @@ const lightColors = [
   "#D8BFD8", // Thistle
   "#FFFAF0", // Floral White
 ];
-let widths = Array(document.querySelectorAll(".opt").length)
-  .fill()
-  .map(() => []);
+let widths = Array(document.querySelectorAll(".opt").length).fill().map(() => []);
 
 const maleArray = [
   "m0.svg",
@@ -209,7 +207,7 @@ function pickGender(labelIndex) {
     selectedIcon = random(femaleArray);
   }
   localStorage.setItem("icon", selectedIcon);
-  icon.setAttribute("src", "../res/icons/" + selectedIcon);
+  icon.setAttribute("src", "./res/icons/" + selectedIcon);
 }
 // function languageSwap() {
 
@@ -224,14 +222,9 @@ document.querySelectorAll(".opt").forEach(function (el, index) {
 });
 document.addEventListener("click", function (event) {
   if (event.target.classList.contains("opt-label")) {
-    const formIndex = Array.from(
-      event.target.parentElement.parentElement.parentElement.querySelectorAll(
-        event.target.parentElement.tagName
-      )
-    ).indexOf(event.target.parentElement);
-    let labelIndex = Array.from(
-      event.target.parentElement.querySelectorAll("label")
-    ).indexOf(event.target);
+    console.log();
+    const formIndex = Array.from(document.querySelectorAll(".container")[3].querySelectorAll(event.target.parentElement.tagName)).indexOf(event.target.parentElement);
+    let labelIndex = Array.from(event.target.parentElement.querySelectorAll("label")).indexOf(event.target);
     moveToChecked(formIndex, labelIndex);
     if (formIndex === 0) {
       themeSwitcher(labelIndex);
@@ -255,7 +248,7 @@ if (localStorage.getItem("theme")) {
 if (localStorage.getItem("icon")) {
   document
     .querySelector(".top-row-svg")
-    .setAttribute("src", "../res/icons/" + localStorage.getItem("icon"));
+    .setAttribute("src", "./res/icons/" + localStorage.getItem("icon"));
   if (localStorage.getItem("icon").slice(0, 1) == "m") {
     moveToChecked(1, 1);
   } else {
