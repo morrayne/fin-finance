@@ -140,6 +140,7 @@ footer {
   height: 100%;
   flex-direction: column;
   gap: 4px;
+  justify-content: space-between;
 }
 #top-row-streak-holder {
   width: fit-content;

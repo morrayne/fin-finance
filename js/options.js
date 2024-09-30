@@ -47,17 +47,33 @@ const lightColors = [
   "#D8BFD8", // Thistle
   "#FFFAF0", // Floral White
 ];
-let widths = Array(document.querySelectorAll(".opt").length).fill().map(() => []);
+let widths = Array(document.querySelectorAll(".opt").length)
+  .fill()
+  .map(() => []);
 
-const maleArray = ["m0.svg", "m1.svg", "m2.svg", "m3.svg", "m4.svg", "m5.svg", "m6.svg", "m7.svg"];
-const femaleArray = ["f0.svg", "f1.svg", "f2.svg", "f3.svg", "f4.svg", "f5.svg", "f6.svg", "f7.svg"];
+const maleArray = [
+  "m0.svg",
+  "m1.svg",
+  "m2.svg",
+  "m3.svg",
+  "m4.svg",
+  "m5.svg",
+  "m6.svg",
+  "m7.svg",
+];
+const femaleArray = [
+  "f0.svg",
+  "f1.svg",
+  "f2.svg",
+  "f3.svg",
+  "f4.svg",
+  "f5.svg",
+  "f6.svg",
+  "f7.svg",
+];
 const iconArray = maleArray.concat(femaleArray);
 const rusLang = [];
 const engLang = [];
-
-
- 
-
 
 // FUNCTIONS
 
@@ -133,18 +149,6 @@ function themeSwitcher(labelIndex) {
       el.style.filter = "invert(0)";
     });
   } else if (labelIndex === 2) {
-    changeTheme(
-      "#AD66D5",
-      "#4575D4",
-      "#05296E",
-      "#ffffff",
-      "#ffffff",
-      "#ffffff90"
-    );
-    document.querySelectorAll(".svg").forEach(function (el) {
-      el.style.filter = "invert(1)";
-    });
-  } else {
     const random = getRandomColors();
     if (random[3] === 1) {
       changeTheme(
@@ -156,7 +160,7 @@ function themeSwitcher(labelIndex) {
         "#00000060"
       );
       document.querySelectorAll(".svg").forEach(function (el) {
-        el.style.filter = "";
+        el.style.filter = "invert(0)";
       });
     } else {
       changeTheme(
@@ -170,6 +174,24 @@ function themeSwitcher(labelIndex) {
       document.querySelectorAll(".svg").forEach(function (el) {
         el.style.filter = "invert(1)";
       });
+    }
+  } else if (labelIndex === 3) {
+    const lockTheme = document.querySelector("body").getAttribute("style");
+    if (lockTheme === null) {
+      console.log("saved theme set");
+      document.querySelector("body").style = localStorage.getItem("lock");
+      if (document.querySelector("body").getAttribute("style").slice(62, 63) === "0") {
+        document.querySelectorAll(".svg").forEach(function (el) {
+          el.style.filter = "invert(0)";
+        });
+      } else {
+        document.querySelectorAll(".svg").forEach(function (el) {
+          el.style.filter = "invert(1)";
+        });
+      }
+    } else {
+      console.log("new theme saved");
+      localStorage.setItem("lock", lockTheme);
     }
   }
 }
@@ -202,8 +224,14 @@ document.querySelectorAll(".opt").forEach(function (el, index) {
 });
 document.addEventListener("click", function (event) {
   if (event.target.classList.contains("opt-label")) {
-    const formIndex = Array.from(event.target.parentElement.parentElement.parentElement.querySelectorAll(event.target.parentElement.tagName)).indexOf(event.target.parentElement);
-    let labelIndex = Array.from(event.target.parentElement.querySelectorAll("label")).indexOf(event.target);
+    const formIndex = Array.from(
+      event.target.parentElement.parentElement.parentElement.querySelectorAll(
+        event.target.parentElement.tagName
+      )
+    ).indexOf(event.target.parentElement);
+    let labelIndex = Array.from(
+      event.target.parentElement.querySelectorAll("label")
+    ).indexOf(event.target);
     moveToChecked(formIndex, labelIndex);
     if (formIndex === 0) {
       themeSwitcher(labelIndex);
@@ -211,12 +239,11 @@ document.addEventListener("click", function (event) {
     } else if (formIndex === 1) {
       pickGender(labelIndex);
     } else if (formIndex === 2) {
-
     }
   }
 });
 
-// SAVE AND SAVE LOAD 
+// SAVE AND SAVE LOAD
 
 if (localStorage.getItem("theme")) {
   themeSwitcher(Number(localStorage.getItem("theme")));
@@ -224,8 +251,11 @@ if (localStorage.getItem("theme")) {
 } else {
   moveToChecked(0, 0);
   themeSwitcher(0);
-} if (localStorage.getItem("icon")) {
-  document.querySelector(".top-row-svg").setAttribute("src", "../res/icons/" + localStorage.getItem("icon"));
+}
+if (localStorage.getItem("icon")) {
+  document
+    .querySelector(".top-row-svg")
+    .setAttribute("src", "../res/icons/" + localStorage.getItem("icon"));
   if (localStorage.getItem("icon").slice(0, 1) == "m") {
     moveToChecked(1, 1);
   } else {
@@ -233,10 +263,10 @@ if (localStorage.getItem("theme")) {
   }
 } else {
   moveToChecked(1, 0);
-} if (localStorage.getItem("lang")) {
+}
+if (localStorage.getItem("lang")) {
   languageSwap();
   moveToChecked(2, localStorage.getItem("lang"));
 } else {
   moveToChecked(2, 0);
 }
-

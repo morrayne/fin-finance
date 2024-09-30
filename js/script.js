@@ -50,7 +50,10 @@ document.addEventListener("click", function (event) {
       document.getElementById("name-inp").value;
   }
 });
-document.getElementById("top-row-text-holder").children[0].textContent = localStorage.getItem("username");
+if (localStorage.getItem("username")) {
+  document.getElementById("top-row-text-holder").children[0].textContent = localStorage.getItem("username");
+}
+
 
 
 
