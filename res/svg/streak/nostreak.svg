@@ -2,14 +2,14 @@
 <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
 <svg width="800px" height="800px" viewBox="-3 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
     
-    <title>flame-fire</title>
+    <title>fire-2</title>
     <desc>Created with Sketch Beta.</desc>
     <defs>
 
 </defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-417.000000, -413.000000)" fill="#000000">
-            <path d="M439.905,419.953 C435.52,421.203 434.717,424.748 435,427 C431.872,423.322 432,419.093 432,413 C421.968,416.783 424.301,427.688 424,431 C421.477,428.935 421,424 421,424 C418.336,425.371 417,429.031 417,432 C417,439.18 422.82,445 430,445 C437.18,445 443,439.18 443,432 C443,427.733 439.867,425.765 439.905,419.953" id="flame-fire" sketch:type="MSShapeGroup">
+        <g id="Icon-Set" sketch:type="MSLayerGroup" transform="translate(-415.000000, -411.000000)" fill="#000000">
+            <path d="M428.5,441 C422.148,441 417,435.641 417,429.625 C417,428.228 417.031,427.094 418,426 C417.895,426.634 419.397,432.055 424.305,431.771 C424.092,427.652 422.978,417.561 428.152,414.073 C427.695,419.557 429.038,426.924 435.029,428 C434.686,425.801 434.727,422.143 436.267,421.467 C436.433,424.836 438.924,426.914 438.924,430.152 C438.924,436.016 433.251,441 428.5,441 L428.5,441 Z M437.905,417.953 C433.52,419.203 432.717,422.748 433,425 C429.872,421.322 430,417.093 430,411 C419.968,414.783 422.301,425.688 422,429 C419.477,426.935 419,422 419,422 C416.336,423.371 415,427.031 415,430 C415,437.18 420.82,443 428,443 C435.18,443 441,437.18 441,430 C441,425.733 437.867,423.765 437.905,417.953 L437.905,417.953 Z" id="fire-2" sketch:type="MSShapeGroup">
 
 </path>
         </g>
