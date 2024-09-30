@@ -223,6 +223,7 @@ if (localStorage.getItem("theme")) {
   moveToChecked(0, localStorage.getItem("theme"));
 } else {
   moveToChecked(0, 0);
+  themeSwitcher(0);
 } if (localStorage.getItem("icon")) {
   document.querySelector(".top-row-svg").setAttribute("src", "../res/icons/" + localStorage.getItem("icon"));
   if (localStorage.getItem("icon").slice(0, 1) == "m") {
