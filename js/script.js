@@ -51,13 +51,33 @@ document.addEventListener("click", function (event) {
   }
 });
 if (localStorage.getItem("username")) {
-  document.getElementById("top-row-text-holder").children[0].textContent = localStorage.getItem("username");
+  document.getElementById("top-row-text-holder").children[0].textContent =
+    localStorage.getItem("username");
 }
 
-
-
-
-
-
-
-
+let form = document.querySelectorAll(".form-submit").forEach(function (el) {
+  let inputs = el.querySelectorAll(".exp-input");
+  for (let i = 0; i < inputs.length; i++) {
+    inputs[i].addEventListener("input", function () {
+      const valueLength = inputs[i].value.length;
+      if (valueLength === 0) {
+        inputs[i].classList.remove("outline-green", "outline-red");
+      } else if (valueLength < 3 || valueLength > 30) {
+        inputs[i].classList.remove("outline-green");
+        inputs[i].classList.add("outline-red");
+      } else {
+        inputs[i].classList.add("outline-green");
+        inputs[i].classList.remove("outline-red");
+      }
+      const allValid = Array.from(inputs).every((input) =>
+        input.classList.contains("outline-green")
+      );
+      const lastChild = inputs[0].parentElement.lastElementChild.lastElementChild;
+      if (allValid) {
+        lastChild.classList.add("ready-submit");
+      } else {
+        lastChild.classList.remove("ready-submit");
+      }
+    });
+  }
+});

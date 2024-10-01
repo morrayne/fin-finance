@@ -33,7 +33,7 @@ html, body {
 div, button, section {
   display: flex;
 }
-span, label, button, .text {
+span, label, button, .text, input {
   font-size: 16px;
   font-family: "garet";
   color: var(--text); 
@@ -551,6 +551,16 @@ footer {
   height: 32px;
   border-radius: 50%;
 }
+.outline-green {
+  outline: solid 1px #0da32b !important;
+}
+.outline-red {
+  outline: solid 1px #ff0000 !important;
+}
+.ready-submit {
+  background-color: #0da32b;
+}
+
 
 
 @media (min-width: 680px) {
